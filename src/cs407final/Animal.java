@@ -1,5 +1,5 @@
 package cs407final;
-
+//This is a comment. 
 public abstract class Animal {
 
     private MovementStrategy moveStrat;
