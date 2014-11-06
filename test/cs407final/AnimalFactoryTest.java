@@ -1,16 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Class AnimalFactoryTest which represents a test class for functionality 
+ * related to the AnimalFactory and Animal Creation
+ * 
+ * @author Jeremy Beardsley, Andrew McCoy, Matt LeClerc, Andrew Possardt
+ * @version 1.0
+ * @since 11-4-2014
  */
 package cs407final;
 
 import junit.framework.TestCase;
 
-/**
- *
- * @author Bear
- */
 public class AnimalFactoryTest extends TestCase {
     
     public AnimalFactoryTest(String testName) {
@@ -35,39 +34,46 @@ public class AnimalFactoryTest extends TestCase {
     /**
      * Test of createAnimal method, of class AnimalFactory.
      */
-    public void testCreateAnimal() throws Exception {
-        System.out.println("createAnimal");
+    public void testCreateAnimalFailure() throws Exception {
+        System.out.println("Testing of createAnimal, forcing an exception:");
+        try{
         char animalType = ' ';
-        Animal expResult = null;
         Animal result = AnimalFactory.createAnimal(animalType);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("Exception was not thrown, CreatAnimalFailure Test Failed!");
+        }
+        catch (InvalidArgumentException ex){
+            System.out.println("Exception Caught correctly for CreateAnimalFailure!");
+        }
+            
     }
 
     /**
-     * Test of getAnimalFactory method, of class AnimalFactory.
+     * Test of createAnimal method, of class AnimalFactory.
      */
-    public void testGetAnimalFactory() {
-        System.out.println("getAnimalFactory");
-        AnimalFactory expResult = null;
-        AnimalFactory result = AnimalFactory.getAnimalFactory();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testCreateAnimalAntelope() throws Exception {
+        System.out.println("Testing of createAnimal for type Antelope:");
+        char animalType = 'a';
+        Animal testAnimal = AnimalFactory.createAnimal(animalType);
+        assertNotNull(testAnimal);
+        System.out.println("Animal Antelope Created Correctly!");
     }
 
     /**
-     * Test of getAnimal method, of class AnimalFactory.
+     * Test of createAnimal method, of class AnimalFactory.
      */
-    public void testGetAnimal() {
-        System.out.println("getAnimal");
-        AnimalFactory instance = new AnimalFactory();
-        Animal expResult = null;
-        Animal result = instance.getAnimal();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testCreateAnimalBear() throws Exception {
+        System.out.println("Testing of createAnimal for type Bear:");
+        char animalType = 'b';
+        Animal result = AnimalFactory.createAnimal(animalType);
+        assertNotNull(result);
+        System.out.println("Animal Bear Created Correctly!");
+     
     }
-    
-}
+    public void testSingletonFunctionality() throws Exception{
+        System.out.println("Singleton Functionality Test:");
+        AnimalFactory case2 = AnimalFactory.getAnimalFactory();
+        AnimalFactory case1 = AnimalFactory.getAnimalFactory();
+        assertEquals(case1, case2);
+        System.out.println("Singleton implementation of AnimalFactory is working as expected!");
+    }
+    }
