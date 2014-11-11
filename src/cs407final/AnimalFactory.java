@@ -15,7 +15,7 @@ public class AnimalFactory {
     protected static AnimalFactory animalFactory=null;
     private Animal animal;
 
-    AnimalFactory() {
+    private AnimalFactory() {
     //does nothing
     }
  
@@ -28,12 +28,6 @@ public class AnimalFactory {
               throw new InvalidArgumentException("Animal Type Required");
     }
 
-    public synchronized static AnimalFactory getAnimalFactory() {
-    if (animalFactory == null){
-            animalFactory = new AnimalFactory();
-        }
-        return animalFactory;
-    }
  public Animal getAnimal(){
     return this.animal;
     }

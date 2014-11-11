@@ -16,12 +16,12 @@ public class Bear extends Animal{
     @Override
     public void move() {
         
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Bear moved!");
     }
 
     @Override
     public void eat() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Bear Ate!");
     }
     
 }

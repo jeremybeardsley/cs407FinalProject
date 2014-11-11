@@ -13,11 +13,16 @@ public abstract class Animal {
 
     private MovementStrategy moveStrat;
 
-    public abstract void move();
+    public void takeTurn(){
+        move();
+        eat();
+        sound();
+    }
+    protected abstract void move();
 
-    public abstract void eat();
+    protected abstract void eat();
 
-    public static void sound() {
+    protected static void sound() {
         System.out.println("Moo");
     }
 }

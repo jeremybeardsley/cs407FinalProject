@@ -16,12 +16,12 @@ public class Antelope extends Animal {
 
     @Override
     public void move() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Antelope moves!");
     }
 
     @Override
     public void eat() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Antelope eats!");
     }
 
 }

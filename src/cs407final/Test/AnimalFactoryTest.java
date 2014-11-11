@@ -6,8 +6,11 @@
  * @version 1.0
  * @since 11-4-2014
  */
-package cs407final;
+package cs407final.Test;
 
+import cs407final.Animal;
+import cs407final.AnimalFactory;
+import cs407final.InvalidArgumentException;
 import junit.framework.TestCase;
 
 public class AnimalFactoryTest extends TestCase {
