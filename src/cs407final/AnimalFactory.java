@@ -14,8 +14,7 @@ package cs407final;
 public class AnimalFactory {
 
     protected static AnimalFactory animalFactory = null;
-    private Animal animal;
-    
+
 
     private AnimalFactory() {
         //does nothing
