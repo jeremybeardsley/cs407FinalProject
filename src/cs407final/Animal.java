@@ -11,7 +11,9 @@ package cs407final;
  */
 public abstract class Animal {
 
-    private MovementStrategy moveStrat;
+    protected MovementStrategy moveStrat;
+    protected Body body;
+    protected AnimalComposite composite;
 
     public void takeTurn(){
         move();

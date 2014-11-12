@@ -12,7 +12,7 @@ package cs407final;
  */
 public class Antelope extends Animal {
 
-    private MovementStrategy moveStrat = new FlightMoveStrategy();
+    
 
     @Override
     public void move() {

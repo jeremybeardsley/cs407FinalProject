@@ -12,7 +12,7 @@ package cs407final;
  * @since 11-4-2014
  */
 public class Bear extends Animal{
-    private MovementStrategy moveStrat = new RandomMoveStrategy();
+    
     @Override
     public void move() {
         
