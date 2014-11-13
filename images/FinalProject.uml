@@ -208,6 +208,14 @@ InvalidArgumentException if the String does not match a known animal.
         <ownedAttribute xmi:id="_tEO_YGrTEeS5uN--MUJ5HQ" name="animalFactory" visibility="protected" isStatic="true" type="_s8-g0GrTEeS5uN--MUJ5HQ" association="_tHd5kGrTEeS5uN--MUJ5HQ">
           <defaultValue xmi:type="uml:LiteralString" xmi:id="_tET34GrTEeS5uN--MUJ5HQ" value="null"/>
         </ownedAttribute>
+        <ownedAttribute xmi:id="_Qs58cmreEeS5auBIA8dxNQ" name="bear" type="_s9uHsGrTEeS5uN--MUJ5HQ" association="_Qs2SEGreEeS5auBIA8dxNQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qs6jgGreEeS5auBIA8dxNQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qs6jgWreEeS5auBIA8dxNQ" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_SOSPomreEeS5auBIA8dxNQ" name="antelope" type="_s9Z-oGrTEeS5uN--MUJ5HQ" association="_SORokGreEeS5auBIA8dxNQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SOS2sGreEeS5auBIA8dxNQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SOS2sWreEeS5auBIA8dxNQ" value="*"/>
+        </ownedAttribute>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_tFhY0GrTEeS5uN--MUJ5HQ" name="AnimalFactory" specification="_s9BkIGrTEeS5uN--MUJ5HQ">
           <ownedParameter xmi:id="_tFhY0WrTEeS5uN--MUJ5HQ" type="_s8-g0GrTEeS5uN--MUJ5HQ" direction="return"/>
           <language>java</language>
@@ -304,6 +312,10 @@ subclass FlightMoveStrategy, as well as the ability to eat and move.
 @since 11-4-2014</body>
         </ownedComment>
         <generalization xmi:id="_tCTFsGrTEeS5uN--MUJ5HQ" general="_s7hIQGrTEeS5uN--MUJ5HQ"/>
+        <ownedAttribute xmi:id="_SORokWreEeS5auBIA8dxNQ" name="animalFactory" type="_s8-g0GrTEeS5uN--MUJ5HQ" association="_SORokGreEeS5auBIA8dxNQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SOSPoGreEeS5auBIA8dxNQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SOSPoWreEeS5auBIA8dxNQ" value="*"/>
+        </ownedAttribute>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_tFrJ0GrTEeS5uN--MUJ5HQ" name="move" specification="_s9ca4GrTEeS5uN--MUJ5HQ">
           <language>java</language>
           <body>System.out.println(&quot;Antelope moves!&quot;);
@@ -345,6 +357,10 @@ subclass RandomMoveStrategy, as well as the ability to eat and move.
 @since 11-4-2014</body>
         </ownedComment>
         <generalization xmi:id="_tCXXIGrTEeS5uN--MUJ5HQ" general="_s7hIQGrTEeS5uN--MUJ5HQ"/>
+        <ownedAttribute xmi:id="_Qs2SEWreEeS5auBIA8dxNQ" name="animalFactory" type="_s8-g0GrTEeS5uN--MUJ5HQ" association="_Qs2SEGreEeS5auBIA8dxNQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Qs58cGreEeS5auBIA8dxNQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Qs58cWreEeS5auBIA8dxNQ" value="*"/>
+        </ownedAttribute>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_tFxQcGrTEeS5uN--MUJ5HQ" name="move" specification="_s9v84GrTEeS5uN--MUJ5HQ">
           <language>java</language>
           <body>System.out.println(&quot;Bear moved!&quot;);
@@ -667,6 +683,9 @@ MovementStrategy interface.
       <packagedElement xmi:type="uml:Association" xmi:id="_tHd5kGrTEeS5uN--MUJ5HQ" name="" memberEnd="_tHd5kWrTEeS5uN--MUJ5HQ _tEO_YGrTEeS5uN--MUJ5HQ">
         <ownedEnd xmi:id="_tHd5kWrTEeS5uN--MUJ5HQ" name="" type="_s8-g0GrTEeS5uN--MUJ5HQ" association="_tHd5kGrTEeS5uN--MUJ5HQ"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_j4YIQGrdEeS5auBIA8dxNQ" name="NewClass1"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Qs2SEGreEeS5auBIA8dxNQ" name="" memberEnd="_Qs2SEWreEeS5auBIA8dxNQ _Qs58cmreEeS5auBIA8dxNQ"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_SORokGreEeS5auBIA8dxNQ" name="" memberEnd="_SORokWreEeS5auBIA8dxNQ _SOSPomreEeS5auBIA8dxNQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_s3vbgGrTEeS5uN--MUJ5HQ" name="java">
       <packagedElement xmi:type="uml:Package" xmi:id="_s3vbgWrTEeS5uN--MUJ5HQ" name="util">
