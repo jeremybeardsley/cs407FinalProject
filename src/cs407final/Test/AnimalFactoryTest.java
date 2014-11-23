@@ -8,9 +8,9 @@
  */
 package cs407final.Test;
 
-import cs407final.Animal;
-import cs407final.AnimalFactory;
-import cs407final.InvalidArgumentException;
+import cs407final.creatures.Animal;
+import cs407final.creatures.AnimalFactory;
+import cs407final.creatures.InvalidArgumentException;
 import junit.framework.TestCase;
 
 public class AnimalFactoryTest extends TestCase {

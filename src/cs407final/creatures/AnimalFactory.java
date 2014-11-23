@@ -1,4 +1,4 @@
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Class Animal Factory which creates animals to populate the creature creation

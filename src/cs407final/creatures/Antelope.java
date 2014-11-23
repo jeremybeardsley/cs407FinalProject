@@ -1,4 +1,4 @@
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Class Antelope which represents a concrete Animal in the creature creation game.

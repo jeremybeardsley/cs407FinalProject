@@ -1,4 +1,4 @@
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Abstract class AnimalComponentDecorator which provides the framework for creating

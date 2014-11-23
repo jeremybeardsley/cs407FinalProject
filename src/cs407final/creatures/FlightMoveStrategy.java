@@ -1,9 +1,9 @@
 
-package cs407final;
+package cs407final.creatures;
 
 /**
- * Class FightMoveStrategy which represents an animal's movement based on attacking
- * another animal in the creature creation game. FightMoveStrategy implements the 
+ * Class FlightMoveStrategy which represents an animal's movement based on running from 
+ * another animal in the creature creation game. FlightMoveStrategy implements the 
  * MovementStrategy interface.
  * @see MovementStrategy
  * 
@@ -11,7 +11,7 @@ package cs407final;
  * @version 1.0
  * @since 11-4-2014
  */
-public class FightMoveStrategy implements MovementStrategy{
+public class FlightMoveStrategy implements MovementStrategy {
 
     @Override
     public void move(String movementType) {

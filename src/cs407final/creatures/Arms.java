@@ -1,7 +1,7 @@
-package cs407final;
+package cs407final.creatures;
 
 /**
- * Class Legs which represents the legs of an Animal in the creature creation game.
+ * Class Arms which represents the arms of an Animal in the creature creation game.
  * This Animal component is a leaf and therefore cannot be made up of any other 
  * component or composite.
  * @see AnimalComponent
@@ -10,9 +10,11 @@ package cs407final;
  * @version 1.0
  * @since 11-12-2014
  */
-public class Legs extends AnimalComponent{
+public class Arms extends AnimalComponent{
 
+  @Override
   public double getWeightTotal() {
-    return 75;
-  }  
+    return 50;
+  }
+  
 }

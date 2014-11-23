@@ -1,4 +1,4 @@
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Class TotalWeightAdjustorDecorator which represents an AnimalComponentDecorator

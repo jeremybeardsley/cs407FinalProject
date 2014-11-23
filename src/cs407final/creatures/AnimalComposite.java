@@ -1,4 +1,4 @@
-package cs407final;
+package cs407final.creatures;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -43,4 +43,5 @@ public abstract class AnimalComposite extends AnimalComponent{
     return weightTotal;
   }
   protected abstract double getWeightBaseTotal();
+
 }

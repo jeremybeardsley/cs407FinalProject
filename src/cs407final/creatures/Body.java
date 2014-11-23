@@ -1,4 +1,4 @@
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Class Body which represents the body of an Animal in the creature creation game.

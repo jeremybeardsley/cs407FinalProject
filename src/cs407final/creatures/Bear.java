@@ -1,5 +1,5 @@
 
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Class Bear which represents a concrete Animal in the creature creation game.

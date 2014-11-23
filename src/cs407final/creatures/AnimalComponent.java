@@ -1,4 +1,4 @@
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Abstract class AnimalComponent which provides the framework for the composite and leaf classes.

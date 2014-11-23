@@ -1,5 +1,9 @@
 package cs407final;
 
+import cs407final.creatures.Animal;
+import cs407final.creatures.InvalidArgumentException;
+import cs407final.creatures.AnimalFactory;
+
 public class CS407Final {
 
     public static void main(String[] args) throws InvalidArgumentException {

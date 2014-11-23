@@ -1,5 +1,5 @@
 
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Exception which is thrown when an animal which does not exist is attempted to be 

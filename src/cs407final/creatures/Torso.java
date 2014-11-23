@@ -1,4 +1,4 @@
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Class Torso which represents the torso of an Animal in the creature creation game.

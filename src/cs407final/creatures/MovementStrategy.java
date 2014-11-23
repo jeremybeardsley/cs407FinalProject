@@ -1,4 +1,4 @@
-package cs407final;
+package cs407final.creatures;
 
 /**
  * Interface MovementStrategy which represents the style of an Animal's movement in
