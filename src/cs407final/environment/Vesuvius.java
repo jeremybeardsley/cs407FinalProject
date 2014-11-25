@@ -7,7 +7,7 @@ public class Vesuvius implements NaturalDisasterFactory{
 
   @Override
   public Disaster makeDisaster(String parameters) {
-    // decipher parameters to make vehicle
+
     if (parameters.equals("Minor")){
       Fallout fallout = new Fallout(false, false);
       Persistance persistance = new ShortTermPersistance();
@@ -21,7 +21,6 @@ public class Vesuvius implements NaturalDisasterFactory{
       Persistance persistance = new PermanantPersistance();
       return new LavaEruption(fallout.getFallout(), persistance.getPersistance());
     }else{
-      // Default car
       Fallout fallout = new Fallout(true, false);
       Persistance persistance = new ShortTermPersistance();
       return new Eruption(true, false);
