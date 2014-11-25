@@ -1,8 +1,6 @@
 package cs407final.environment;
 
-/**
- * Concrete vehicle class
- */
+
 public class Eruption extends DisasterBase{
   boolean fallout;
   boolean persistance;
