@@ -1,8 +1,5 @@
 package cs407final.environment;
 
-/**
- * Engine for a motorized vehicle
- */
 public class Fallout {
   private final boolean killLife;
   private final boolean changeTile;
