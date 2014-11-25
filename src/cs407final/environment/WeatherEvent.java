@@ -1,8 +1,5 @@
 package cs407final.environment;
 
-/**
- * Concrete factory for manual power vehicles
- */
 public class WeatherEvent implements DisasterStrategy{
 
   
