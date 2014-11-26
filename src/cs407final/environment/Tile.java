@@ -1,9 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cs407final.environment;
+
+/**
+ * Class Tile which represents one of many tiles on the game board of the creature
+ * creation game. Each tile has a tile property representing what type of landscape 
+ * the tile is made up of.
+ * @see TileProperty
+ * 
+ * @author Jeremy Beardsley, Matt LeClerc, Andrew McCoy, Andrew Possardt
+ * @version 1.0
+ * @since 11-24-14
+ */
+
+
 public class Tile {
     private TileProperty tileProperty;  
     private boolean food, isTraversable, up, down, left, right;

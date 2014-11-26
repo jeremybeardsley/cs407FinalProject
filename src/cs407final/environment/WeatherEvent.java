@@ -1,7 +1,16 @@
 package cs407final.environment;
 
-public class WeatherEvent implements DisasterStrategy{
+/**
+ * Class WeatherEvent which represents a DisasterStrategy in the creature creation
+ * game.
+ * @see DisasterStrategy
+ * 
+ * @author Jeremy Beardsley, Matt LeClerc, Andrew McCoy, Andrew Possardt
+ * @version 1.0
+ * @since 11-24-14
+ */
 
+public class WeatherEvent implements DisasterStrategy{
   
   public Disaster makeDisaster(String parameters) {
     if (parameters.equals("Hurricane")){

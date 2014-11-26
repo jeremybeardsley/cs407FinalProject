@@ -1,9 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cs407final.environment;
+
+/**
+ * Class TileProperty which represents the type of landscape (Desert, Plains, Mountain,
+ * Forest, or Water) that a tile can have.
+ * @see Tile
+ * 
+ * @author Jeremy Beardsley, Matt LeClerc, Andrew McCoy, Andrew Possardt
+ * @version 1.0
+ * @since 11-24-14
+ */
+
+
 public class TileProperty {
     private final String description;
     public static final TileProperty DESERT = new TileProperty("Desert");

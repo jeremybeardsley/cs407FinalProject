@@ -1,7 +1,16 @@
 package cs407final.environment;
 
 /**
- * Concrete factory
+ * Class Vesuvius which represents a concrete NaturalDisasterFactory in the creature
+ * creation game. This factory creates a natural disaster with fallout and persistance
+ * based on string input.
+ * @see NaturalDisasterFactory
+ * @see Fallout
+ * @see Persistance
+ * 
+ * @author Jeremy Beardsley, Matt LeClerc, Andrew McCoy, Andrew Possardt
+ * @version 1.0
+ * @since 11-24-14
  */
 public class Vesuvius implements NaturalDisasterFactory{
 
