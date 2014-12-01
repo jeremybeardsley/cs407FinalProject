@@ -14,17 +14,27 @@ public abstract class Animal {
     protected MovementStrategy moveStrat;
     protected Body body;
     public AnimalComposite composite;
+    protected int Energy = 100;
+    protected String Name;
+    protected boolean Death = false;
+    protected Position position;
 
     public void takeTurn(){
+        checkAdjacents();
         move();
         eat();
-        sound();
+        burnCalories();
+        checkDeath();
     }
     protected abstract void move();
-
+    protected abstract void checkAdjacents();
     protected abstract void eat();
-
-    protected static void sound() {
-        System.out.println("Moo");
+    protected abstract void burnCalories();
+    protected void checkDeath() {
+        if (Energy < 0)
+        {
+        System.out.println(Name +" has died");
+           Death = true;
+        }
     }
    }

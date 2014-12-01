@@ -23,5 +23,15 @@ public class Bear extends Animal{
     public void eat() {
         System.out.println("Bear Ate!");
     }
+
+    @Override
+    protected void burnCalories() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    protected void checkAdjacents() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
