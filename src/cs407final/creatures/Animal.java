@@ -53,4 +53,7 @@ public abstract class Animal {
         }
         System.out.println("");
     }
+    public void setPosition(int x, int y){
+        position = new Position(x,y);
+    }
    }

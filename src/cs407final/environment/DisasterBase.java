@@ -1,5 +1,5 @@
 package cs407final.environment;
-
+import cs407final.tiles.*;
 /**
  * Abstract class DisasterBase which provides framework for all natural disasters which 
  * affect the game board and creatures on it in the creature creation game. Each disaster

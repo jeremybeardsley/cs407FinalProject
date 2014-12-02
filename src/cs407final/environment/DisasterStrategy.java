@@ -1,5 +1,5 @@
 package cs407final.environment;
-
+import cs407final.tiles.*;
 /**
  * Interface DisasterStrategy which provides the framework for a disaster strategy 
  * for a natural disaster in the creature creation game.
