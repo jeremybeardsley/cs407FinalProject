@@ -5,9 +5,11 @@
  */
 package cs407final.GUI;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
 
@@ -525,11 +527,23 @@ public class SettingsGUI extends javax.swing.JFrame {
     // Action Listener for file selection button.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int returnVal = fileChooser.showOpenDialog(this);
+        String line;
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = fileChooser.getSelectedFile();
                 // What to do with the file, e.g. display it in a TextArea
                 //fileLocationTF.read( new FileReader( file.getAbsolutePath() ), null );
                 fileLocationTF.setText(file.getAbsolutePath());
+                try {
+                    reader = new BufferedReader(new FileReader(file.getAbsoluteFile()));
+                    userAnimals = new ArrayList<String>();
+                    line = reader.readLine();
+                    while(line != null ) {
+                        userAnimals.add(line);
+                        System.out.println(line);
+                        line = reader.readLine();
+                    }
+                    reader.close();
+                } catch (IOException e) {}
             } else System.out.println("File access cancelled by user.");
     }//GEN-LAST:event_jButton1ActionPerformed
     
@@ -574,7 +588,7 @@ public class SettingsGUI extends javax.swing.JFrame {
             }
         });
     }
-    
+    private BufferedReader reader;
     private List<String> userAnimals;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField antelopeTF;
