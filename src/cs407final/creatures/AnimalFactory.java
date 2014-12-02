@@ -25,7 +25,12 @@ public class AnimalFactory {
             return makeAntelope();
         } else if (animalType == 'b') {
             return makeBear();
-        } else {
+        }else if (animalType == 't'){
+            return makeTyrranosaurus();
+        } else if (animalType == 'r'){
+            return makeBunny();
+        } 
+        else {
             throw new InvalidArgumentException("Animal Type Required");
         }
     }
@@ -39,10 +44,27 @@ public class AnimalFactory {
         bear.body.add(new Legs());
         bear.body.add(new Arms());
         bear.composite = bear.body;
+        bear.Weight = bear.composite.getWeightTotal();
+        bear.Name = "NPC Bear";
+        bear.Strength = 10;
 
         return bear;
     }
+    Bunny makeBunny() {
+        Bunny peter = new Bunny();
+        peter.moveStrat = new RandomMoveStrategy();
+        peter.body = new Body();
+        peter.body.add(new WeightDecorator(.3, new Torso()));
+        peter.body.add(new WeightDecorator(.3, new Head()));
+        peter.body.add(new WeightDecorator(.3, new Legs()));
+        peter.body.add(new WeightDecorator(.3, new Legs()));
+        peter.composite = peter.body;
+        peter.Weight = peter.composite.getWeightTotal();
+        peter.Name = "NPC Bunny";
+        peter.Strength = 2;
 
+        return peter;
+    }
     Antelope makeAntelope() {
         Antelope antelope = new Antelope();
         antelope.moveStrat = new FlightMoveStrategy();
@@ -52,9 +74,74 @@ public class AnimalFactory {
         antelope.body.add(new WeightDecorator(.6, new Legs()));
         antelope.body.add(new WeightDecorator(.6, new Legs()));
         antelope.composite = antelope.body;
+        antelope.Weight = antelope.composite.getWeightTotal();
+        antelope.Strength = 3;
+        antelope.Name = "NPC Antelope";
         return antelope;
+        
     }
-
+    Tyrannosaurus makeTyrranosaurus(){
+        Tyrannosaurus trex = new Tyrannosaurus();
+        trex.moveStrat = new FightMoveStrategy();
+        trex.body = new Body();
+        trex.body.add(new WeightDecorator(5, new Torso()));
+        trex.body.add(new WeightDecorator(2, new Head()));
+        trex.body.add(new WeightDecorator(2, new Arms()));
+        trex.body.add(new WeightDecorator(15, new Legs()));
+        trex.composite = trex.body;
+        trex.Weight = trex.composite.getWeightTotal();
+        trex.Strength = 50;
+        trex.Name = "NPC Scary Dinosaur";
+        return trex;
+        
+    }
+      Yeti makeYeti(){
+        Yeti yeti = new Yeti();
+        yeti.moveStrat = new RandomMoveStrategy();
+        yeti.body = new Body();
+        yeti.body.add(new WeightDecorator(2, new Torso()));
+        yeti.body.add(new WeightDecorator(2, new Head()));
+        yeti.body.add(new WeightDecorator(2, new Arms()));
+        yeti.body.add(new WeightDecorator(4, new Legs()));
+        yeti.composite = yeti.body;
+        yeti.Weight = yeti.composite.getWeightTotal();
+        yeti.Strength = 50;
+        yeti.Name = "NPC Yeti";
+        return yeti;
+        
+    }
+      public Animal createAnimal(String name, int Arms, int Legs, int Head, int Strength, int MoveStrat, double SizeFactor )
+      {
+          UserCreatedAnimal uca = new UserCreatedAnimal();
+          switch(MoveStrat){
+              case 0: uca.moveStrat = new FlightMoveStrategy();
+                  break;
+              case 1: uca.moveStrat = new FightMoveStrategy();
+                  break;
+              case 2: uca.moveStrat = new RandomMoveStrategy();    
+                  break;
+              default : uca.moveStrat = new RandomMoveStrategy();  
+          }         
+          uca.body = new Body();
+          for (int i=0; i<=Arms; i++)
+          {
+              uca.body.add(new WeightDecorator(SizeFactor, new Arms()));
+          }
+           for (int i=0; i<=Legs; i++)
+          {
+              uca.body.add(new WeightDecorator(SizeFactor, new Legs()));
+          }
+           for (int i=0; i<=Head; i++)
+          {
+              uca.body.add(new WeightDecorator(SizeFactor, new Head()));
+          }
+           uca.body.add(new WeightDecorator(SizeFactor, new Torso()));
+           uca.composite = uca.body;
+           uca.Name = "PC " +name;
+           uca.Weight = uca.composite.getWeightTotal();
+           uca.Strength = Strength;
+          return uca;
+      }
     public synchronized static AnimalFactory getAnimalFactory() {
         if (animalFactory == null) {
             animalFactory = new AnimalFactory();

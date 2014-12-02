@@ -10,12 +10,14 @@ public class CS407Final {
         AnimalFactory af = AnimalFactory.getAnimalFactory();
         Animal yogi = af.createAnimal('b');
         Animal gnu = af.createAnimal('a');
+        Animal t = af.createAnimal('t');
 
-        yogi.takeTurn();
-        gnu.takeTurn();
-        
-        System.out.println("Total Weight for Yogi:" +yogi.composite.getWeightTotal());
-        System.out.println("Total Weight for Gnu:" +gnu.composite.getWeightTotal());
+        //yogi.takeTurn();
+        //gnu.takeTurn();
+        //t.takeTurn();
+        yogi.getStats();
+        gnu.getStats();
+        t.getStats();
     }
 
 }

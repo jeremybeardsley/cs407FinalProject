@@ -12,8 +12,6 @@ package cs407final.creatures;
  */
 public class Antelope extends Animal {
 
-    
-
     @Override
     public void move() {
         System.out.println("Antelope moves!");
@@ -22,6 +20,16 @@ public class Antelope extends Animal {
     @Override
     public void eat() {
         System.out.println("Antelope eats!");
+    }
+
+    @Override
+    protected void burnCalories() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    protected void checkAdjacents() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
