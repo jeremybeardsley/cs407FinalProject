@@ -34,6 +34,9 @@ public class Tile
     public void setPosition(Position pos){
         this.position = pos;
     }
+    public Position getPosition(){
+        return position;
+    }
     public String toString() {
         return "Food: " + food + ", Traversable: " + traversable + ", Toxic: " + toxic;
     }
