@@ -33,6 +33,7 @@ public abstract class AnimalComposite extends AnimalComponent{
    * Note implemented as template pattern
    * @return price total of this component plus all contained classes
    */
+  @Override
   public double getWeightTotal() {
     double weightTotal = getWeightBaseTotal();
     Iterator<AnimalComponent> subIter = bodyParts.iterator();

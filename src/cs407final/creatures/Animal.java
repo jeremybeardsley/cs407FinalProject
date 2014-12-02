@@ -18,6 +18,8 @@ public abstract class Animal {
     protected String Name;
     protected boolean Death = false;
     protected Position position;
+    protected int Strength;
+    protected double Weight;
 
     public void takeTurn(){
         checkAdjacents();
@@ -36,5 +38,16 @@ public abstract class Animal {
         System.out.println(Name +" has died");
            Death = true;
         }
+    }
+    public void getStats(){
+        System.out.println("Name: \t\t" +Name);
+        System.out.println("Energy: \t" +Energy);
+        System.out.println("Weight \t\t" + Weight);
+        System.out.println("Strength: \t" +Strength);
+        if (Death)
+        {
+            System.out.println(Name +"is actually Dead!");
+        }
+        System.out.println("");
     }
    }
