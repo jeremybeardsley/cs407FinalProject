@@ -1,5 +1,5 @@
 package cs407final.environment;
-
+import cs407final.tiles.*;
 /**
  * Class WeatherEvent which represents a DisasterStrategy in the creature creation
  * game.

@@ -1,5 +1,5 @@
 package cs407final.environment;
-
+import cs407final.tiles.*;
 /**
  * Interface Disaster which is implemented by the base disaster class to provide
  * polymorphism for subclasses of DisasterBase.

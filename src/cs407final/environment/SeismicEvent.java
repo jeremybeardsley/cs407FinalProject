@@ -1,4 +1,5 @@
 package cs407final.environment;
+import cs407final.tiles.*;
 
 /**
  * Class SeismicEvent which represents a DisasterStrategy in the creature creation
