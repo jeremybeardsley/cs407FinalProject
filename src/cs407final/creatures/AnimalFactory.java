@@ -27,7 +27,11 @@ public class AnimalFactory {
             return makeBear();
         }else if (animalType == 't'){
             return makeTyrranosaurus();
-        } else if (animalType == 'r'){
+        }else if (animalType == 'y'){
+            return makeYeti();
+        }else if (animalType == 'h'){
+            return makeHoneyBadger();
+        }else if (animalType == 'r'){
             return makeBunny();
         } 
         else {
@@ -64,6 +68,21 @@ public class AnimalFactory {
         peter.Strength = 2;
 
         return peter;
+    }
+        HoneyBadger makeHoneyBadger() {
+        HoneyBadger dgaf = new HoneyBadger();
+        dgaf.moveStrat = new FlightMoveStrategy();
+        dgaf.body = new Body();
+        dgaf.body.add(new WeightDecorator(.4, new Torso()));
+        dgaf.body.add(new WeightDecorator(.4, new Head()));
+        dgaf.body.add(new WeightDecorator(.3, new Legs()));
+        dgaf.body.add(new WeightDecorator(.3, new Legs()));
+        dgaf.composite = dgaf.body;
+        dgaf.Weight = dgaf.composite.getWeightTotal();
+        dgaf.Name = "NPC Honey Badger";
+        dgaf.Strength = 9;
+
+        return dgaf;
     }
     Antelope makeAntelope() {
         Antelope antelope = new Antelope();
