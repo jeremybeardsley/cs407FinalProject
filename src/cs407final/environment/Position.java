@@ -1,5 +1,5 @@
 
-package cs407final.creatures;
+package cs407final.environment;
 
 public class Position {
     int xCord, yCord;

@@ -1,4 +1,7 @@
 package cs407final.creatures;
+
+import cs407final.environment.Position;
+
 /**
  * Abstract class Animal which represents an animal in the creature creation game. Subclasses
  * of Animal can move, eat, and make a sound. Subclasses also have a MovementStrategy 
