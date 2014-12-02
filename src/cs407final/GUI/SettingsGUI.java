@@ -551,20 +551,22 @@ public class SettingsGUI extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // Close this window, start main game activity (new form to display text 
         // representation of game should open as well).
-        System.out.println(tileWidthTF.getText());
-        System.out.println(tileHeightTF.getText());
-        System.out.println(antelopeTF.getText());
-        System.out.println(bearTF.getText());
-        System.out.println(bunnyTF.getText());
-        System.out.println(honeyBadgerTF.getText());
-        System.out.println(tRexTF.getText());
-        System.out.println(yetiTF.getText());
-        System.out.println(volcanicChanceTF.getText());
-        System.out.println(noxiousChanceTF.getText());
-        System.out.println(typhoonChanceTF.getText());
-        System.out.println(hurricaneChanceTF.getText());
-        System.out.println(earthquakeChanceTF.getText());
-        
+        int[] concreteAnimals = {Integer.parseInt(antelopeTF.getText()),
+                                 Integer.parseInt(bearTF.getText()),
+                                 Integer.parseInt(bunnyTF.getText()),
+                                 Integer.parseInt(honeyBadgerTF.getText()),
+                                 Integer.parseInt(tRexTF.getText()),
+                                 Integer.parseInt(yetiTF.getText()) };
+        int[] disasterChances = {Integer.parseInt(volcanicChanceTF.getText()),
+                                 Integer.parseInt(noxiousChanceTF.getText()),
+                                 Integer.parseInt(hurricaneChanceTF.getText()),
+                                 Integer.parseInt(typhoonChanceTF.getText()),
+                                 Integer.parseInt(earthquakeChanceTF.getText()) };
+        GameDataSingleton singleton = GameDataSingleton.getInstance();
+        singleton.setBoardSize(Integer.parseInt(tileWidthTF.getText()), 
+                                                     Integer.parseInt(tileHeightTF.getText()));
+        singleton.setAnimals(concreteAnimals, userAnimals);
+        singleton.setChances(disasterChances);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
