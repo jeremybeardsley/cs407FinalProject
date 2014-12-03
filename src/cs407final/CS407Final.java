@@ -7,6 +7,7 @@ import cs407final.GUI.SettingsGUI;
 import cs407final.GUI.GameOutput;
 import cs407final.creatures.Animal;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CS407Final {
     GameOutput go;
@@ -38,7 +39,19 @@ public class CS407Final {
         Creatures creatures = new Creatures(cntAnt, cntBear, cntBun, cntHb, cntTrex, cntYeti, gameboard, customAnimals);
         for(Animal a: creatures.CreaturesArray)
             a.takeTurn(creatures, gameboard);
+        boolean cont = true;
+        System.out.println("Enter y for another turn!");
+        Scanner scan = new Scanner(System.in);
         
+        while (cont){
+         for(Animal a: creatures.CreaturesArray)
+            a.takeTurn(creatures, gameboard); 
+         System.out.println("Enter y for another turn!");
+         String temp = scan.nextLine();
+         if (!temp.equals("y")){
+             cont = false;
+         }
+        }
     }
     
     public void openMenu() {
