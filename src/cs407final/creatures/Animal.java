@@ -54,6 +54,7 @@ public abstract class Animal {
                 Random rn = new Random();
                 Position temp;
                 do {
+                    unOccupied = true;
                     int x = rn.nextInt(1000000) % 3;
                     int y = rn.nextInt(1000000) % 3;
                     temp = new Position(this.position.xCord + (x - 1), this.position.yCord + (y - 1));
