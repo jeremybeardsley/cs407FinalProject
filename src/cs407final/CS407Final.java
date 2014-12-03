@@ -38,7 +38,7 @@ public class CS407Final {
         Creatures creatures = new Creatures(cntAnt, cntBear, cntBun, cntHb, cntTrex, cntYeti, gameboard, customAnimals);
         for(Animal a: creatures.CreaturesArray)
             a.takeTurn(creatures, gameboard);
-        go = new GameOutput();
+        
     }
     
     public void openMenu() {

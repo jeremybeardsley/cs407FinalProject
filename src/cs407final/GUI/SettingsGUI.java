@@ -577,9 +577,9 @@ public class SettingsGUI extends javax.swing.JFrame {
         singleton.setAnimals(concreteAnimals, userAnimals);
         singleton.setChances(disasterChances);
         try {
+            this.dispose();
             CS407Final test = new CS407Final();
         } catch (InvalidArgumentException e) {}
-        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
