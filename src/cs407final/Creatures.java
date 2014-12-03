@@ -25,37 +25,37 @@ public class Creatures {
         
         Random rn = new Random();
         //Antelope Creation
-        for (int i = 0; i <= cntAnt; i++) {
+        for (int i = 0; i < cntAnt; i++) {
             Animal animal = af.createAnimal('a');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
             CreaturesArray.add(animal);
         }
         //Bunny Creation
-        for (int i = 0; i <= cntBun; i++) {
+        for (int i = 0; i < cntBun; i++) {
             Animal animal = af.createAnimal('r');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
             CreaturesArray.add(animal);
         }
         //Bear Creation
-         for (int i = 0; i <= cntBear; i++) {
+         for (int i = 0; i < cntBear; i++) {
             Animal animal = af.createAnimal('b');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
             CreaturesArray.add(animal);
         }
          //Trex Creation
-          for (int i = 0; i <= cntTrex; i++) {
+          for (int i = 0; i < cntTrex; i++) {
             Animal animal = af.createAnimal('t');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
             CreaturesArray.add(animal);
         }
         //Yeti Creation
-           for (int i = 0; i <= cntYeti; i++) {
+           for (int i = 0; i < cntYeti; i++) {
             Animal animal = af.createAnimal('y');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
             CreaturesArray.add(animal);
         }
            //HoneyBadgerCreation
-            for (int i = 0; i <= cntHb; i++) {
+            for (int i = 0; i < cntHb; i++) {
             Animal animal = af.createAnimal('h');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
             CreaturesArray.add(animal);
