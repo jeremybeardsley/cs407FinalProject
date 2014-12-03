@@ -92,6 +92,7 @@ public abstract class Animal {
     }
 
     protected void checkAdjacents(Creatures creatures) {
+        System.out.println("Checking tiles for Adjacent Creatures for" +this.Name);
         ArrayList<Position> adjTiles = new ArrayList();
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; i++) {
@@ -110,6 +111,7 @@ public abstract class Animal {
         if (sharedTile) {
             for (Animal a : creatures.CreaturesArray) {
                 if (a.position == this.position) {
+                    System.out.println(this.Name +" is attacking " +a.Name);
                     if (a.Strength >= this.Strength) {
                         this.Energy = 0;
                         System.out.println(a.Name + " has killed " + this.Name);
@@ -125,10 +127,13 @@ public abstract class Animal {
     protected void eat(Board gb) {
         Tile currentTile = gb.gameBoard[this.position.xCord][this.position.yCord];
         if (currentTile.getFood() && this.Energy <= 80) {
+           System.out.println(this.Name +" is eating.  NOMNOMNOM"); 
             this.Energy += 20;
         } else if (currentTile.getFood()) {
+            System.out.println(this.Name +" is eating.  NOMNOMNOM"); 
             this.Energy = 100;
         } else {
+            System.out.println(this.Name +" is hungry. "); 
             burnCalories();
         }
     }
