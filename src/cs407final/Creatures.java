@@ -17,47 +17,48 @@ import java.util.Random;
  * @author Bear
  */
 public class Creatures {
+    public ArrayList<Animal> CreaturesArray = new ArrayList();
     public Creatures(int cntAnt,int cntBear,int cntBun,int cntHb,int cntTrex, int cntYeti, Board gb) throws InvalidArgumentException{
                 ArrayList<Position> usedSeedSpaces = new ArrayList();
         
         AnimalFactory af = AnimalFactory.getAnimalFactory();
-        ArrayList<Animal> creatures = new ArrayList();
+        
         Random rn = new Random();
         //Antelope Creation
         for (int i = 0; i <= cntAnt; i++) {
             Animal animal = af.createAnimal('a');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
-            creatures.add(animal);
+            CreaturesArray.add(animal);
         }
         //Bunny Creation
         for (int i = 0; i <= cntBun; i++) {
             Animal animal = af.createAnimal('r');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
-            creatures.add(animal);
+            CreaturesArray.add(animal);
         }
         //Bear Creation
          for (int i = 0; i <= cntBear; i++) {
             Animal animal = af.createAnimal('b');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
-            creatures.add(animal);
+            CreaturesArray.add(animal);
         }
          //Trex Creation
           for (int i = 0; i <= cntTrex; i++) {
             Animal animal = af.createAnimal('t');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
-            creatures.add(animal);
+            CreaturesArray.add(animal);
         }
         //Yeti Creation
            for (int i = 0; i <= cntYeti; i++) {
             Animal animal = af.createAnimal('y');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
-            creatures.add(animal);
+            CreaturesArray.add(animal);
         }
            //HoneyBadgerCreation
             for (int i = 0; i <= cntHb; i++) {
             Animal animal = af.createAnimal('h');
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
-            creatures.add(animal);
+            CreaturesArray.add(animal);
         }
     }
     private static void setViablePosition(Random rn, int gameWidth, int gameHeight, ArrayList<Position> usedSeedSpaces1, Animal an) {

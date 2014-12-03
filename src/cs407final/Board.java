@@ -10,8 +10,8 @@ import java.util.Random;
  * @author Bear
  */
 public class Board {
-    Tile[][]gameBoard;
-    int height, width;
+    public Tile[][]gameBoard;
+    public int height, width;
     public Board(int gameHeight, int gameWidth){
         height = gameHeight;
         width = gameWidth;
