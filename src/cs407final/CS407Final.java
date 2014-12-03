@@ -6,14 +6,30 @@ import cs407final.creatures.AnimalFactory;
 import cs407final.environment.Position;
 import cs407final.tiles.Tile;
 import cs407final.tiles.TileMaker;
+import cs407final.GUI.GameDataSingleton;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class CS407Final {
     ArrayList<Position> usedSeedSpaces = new ArrayList();
     public static void main(String[] args) throws InvalidArgumentException {
-        int gameWidth = 10, gameHeight = 10;
-        int cntAnt = 6, cntBun = 3, cntTrex = 1, cntBear = 5, cntHb = 1, cntYeti = 1;
+        GameDataSingleton singleton = GameDataSingleton.getInstance();
+        int[] boardSize = singleton.getBoardSize();
+        int gameWidth = boardSize[0], 
+            gameHeight = boardSize[1];
+        int[] concreteAnimals = singleton.getConcreteAnimals();
+        int cntAnt = concreteAnimals[0],
+            cntBear = concreteAnimals[1],
+            cntBun = concreteAnimals[2],
+            cntHb = concreteAnimals[3],
+            cntTrex = concreteAnimals[4],
+            cntYeti = concreteAnimals[5];
+        int[] disasterChances = singleton.getDisasterChances();
+        int volChance = disasterChances[0],
+            noxChance = disasterChances[1],
+            hurChance = disasterChances[2],
+            typhChance = disasterChances[3],
+            earthChance = disasterChances[4];
         ArrayList<Position> usedSeedSpaces = new ArrayList();
         
         AnimalFactory af = AnimalFactory.getAnimalFactory();
@@ -86,5 +102,5 @@ public class CS407Final {
         }
         an.setPosition(posX, posY);
     }
-
+    
 }
