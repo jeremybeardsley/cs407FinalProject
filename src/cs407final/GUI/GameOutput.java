@@ -125,6 +125,10 @@ public class GameOutput extends javax.swing.JFrame {
         System.out.println("And Things!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void printTurn(String s) {
+        System.out.println(s);
+    }
+    
     /**
      * @param args the command line arguments
      */

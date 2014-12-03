@@ -3,11 +3,13 @@ package cs407final;
 import cs407final.creatures.InvalidArgumentException;
 import cs407final.environment.Position;
 import cs407final.GUI.GameDataSingleton;
+import cs407final.GUI.SettingsGUI;
+import cs407final.GUI.GameOutput;
 import java.util.ArrayList;
 
 public class CS407Final {
-    ArrayList<Position> usedSeedSpaces = new ArrayList();
-    public static void main(String[] args) throws InvalidArgumentException {
+    public CS407Final() throws InvalidArgumentException {
+        
         GameDataSingleton singleton = GameDataSingleton.getInstance();
         int[] boardSize = singleton.getBoardSize();
         int gameWidth = boardSize[0], 
@@ -32,7 +34,11 @@ public class CS407Final {
         Board gameboard = new Board (gameHeight, gameWidth);
         //Creature Creatures
         Creatures creatures = new Creatures(cntAnt, cntBear, cntBun, cntHb, cntTrex, cntYeti, gameboard, customAnimals);
+        GameOutput thisGameOutput = new GameOutput();
     }
     
+    public void openMenu() {
+        SettingsGUI s = new SettingsGUI();
+    }
     
 }

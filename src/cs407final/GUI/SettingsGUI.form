@@ -333,7 +333,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="antelopeTF">
           <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="2"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[30, 25]"/>
             </Property>
@@ -347,7 +347,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="bearTF">
           <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="2"/>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[30, 25]"/>
             </Property>
@@ -389,7 +389,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="bunnyTF">
           <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="2"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[30, 25]"/>
             </Property>
@@ -403,7 +403,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="honeyBadgerTF">
           <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="2"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[30, 25]"/>
             </Property>

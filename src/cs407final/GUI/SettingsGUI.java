@@ -1,6 +1,8 @@
 
 package cs407final.GUI;
 
+import cs407final.CS407Final;
+import cs407final.creatures.InvalidArgumentException;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -176,12 +178,12 @@ public class SettingsGUI extends javax.swing.JFrame {
 
         jLabel9.setText("Bear:");
 
-        antelopeTF.setText("0");
+        antelopeTF.setText("2");
         antelopeTF.setMaximumSize(new java.awt.Dimension(30, 25));
         antelopeTF.setMinimumSize(new java.awt.Dimension(30, 25));
         antelopeTF.setPreferredSize(new java.awt.Dimension(30, 25));
 
-        bearTF.setText("0");
+        bearTF.setText("2");
         bearTF.setMinimumSize(new java.awt.Dimension(30, 25));
         bearTF.setPreferredSize(new java.awt.Dimension(30, 25));
 
@@ -201,12 +203,12 @@ public class SettingsGUI extends javax.swing.JFrame {
 
         jLabel27.setText("Honey Badger:");
 
-        bunnyTF.setText("0");
+        bunnyTF.setText("2");
         bunnyTF.setMaximumSize(new java.awt.Dimension(30, 25));
         bunnyTF.setMinimumSize(new java.awt.Dimension(30, 25));
         bunnyTF.setPreferredSize(new java.awt.Dimension(30, 25));
 
-        honeyBadgerTF.setText("0");
+        honeyBadgerTF.setText("2");
         honeyBadgerTF.setMaximumSize(new java.awt.Dimension(30, 25));
         honeyBadgerTF.setMinimumSize(new java.awt.Dimension(30, 25));
         honeyBadgerTF.setPreferredSize(new java.awt.Dimension(30, 25));
@@ -574,6 +576,10 @@ public class SettingsGUI extends javax.swing.JFrame {
                                Integer.parseInt(tileHeightTF.getText()));
         singleton.setAnimals(concreteAnimals, userAnimals);
         singleton.setChances(disasterChances);
+        try {
+            CS407Final test = new CS407Final();
+        } catch (InvalidArgumentException e) {}
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

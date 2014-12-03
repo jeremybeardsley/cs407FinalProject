@@ -18,8 +18,8 @@ import java.util.Random;
  */
 public class Creatures {
     public ArrayList<Animal> CreaturesArray = new ArrayList();
+    public ArrayList<Position> usedSeedSpaces = new ArrayList();
     public Creatures(int cntAnt,int cntBear,int cntBun,int cntHb,int cntTrex, int cntYeti, Board gb, ArrayList<String> custom) throws InvalidArgumentException{
-                ArrayList<Position> usedSeedSpaces = new ArrayList();
         
         AnimalFactory af = AnimalFactory.getAnimalFactory();
         
@@ -60,6 +60,7 @@ public class Creatures {
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
             CreaturesArray.add(animal);
         }
+        if(custom != null) {
             for (int i=0; i<custom.size(); i++) {
                 String[] s = custom.get(i).split("\\s");
                 Animal animal = af.createAnimal(s[0],
@@ -72,6 +73,7 @@ public class Creatures {
                 setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
                 CreaturesArray.add(animal);
             }
+        }
     }
     private static void setViablePosition(Random rn, int gameWidth, int gameHeight, ArrayList<Position> usedSeedSpaces1, Animal an) {
         boolean viable = false;
@@ -79,10 +81,19 @@ public class Creatures {
         while (!viable) {
             posX = rn.nextInt(gameWidth - 1) + 1;
             posY = rn.nextInt(gameHeight - 1) + 1;
-            for (Position p : usedSeedSpaces1) {
-                viable = !(p.xCord == posX && p.yCord == posY);
+            if(usedSeedSpaces1.isEmpty()) viable = true;
+            else {
+                for (Position p : usedSeedSpaces1) {
+                    if (p.xCord == posX && p.yCord == posY)
+                        viable = false;
+                    else {
+                        viable = true;
+                        break;
+                    }
+                }
             }
         }
         an.setPosition(posX, posY);
+        usedSeedSpaces1.add(new Position(posX,posY));
     }
 }
