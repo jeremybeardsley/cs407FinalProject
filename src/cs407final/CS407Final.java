@@ -5,9 +5,11 @@ import cs407final.environment.Position;
 import cs407final.GUI.GameDataSingleton;
 import cs407final.GUI.SettingsGUI;
 import cs407final.GUI.GameOutput;
+import cs407final.creatures.Animal;
 import java.util.ArrayList;
 
 public class CS407Final {
+    GameOutput go;
     public CS407Final() throws InvalidArgumentException {
         
         GameDataSingleton singleton = GameDataSingleton.getInstance();
@@ -34,7 +36,9 @@ public class CS407Final {
         Board gameboard = new Board (gameHeight, gameWidth);
         //Creature Creatures
         Creatures creatures = new Creatures(cntAnt, cntBear, cntBun, cntHb, cntTrex, cntYeti, gameboard, customAnimals);
-        GameOutput thisGameOutput = new GameOutput();
+        for(Animal a: creatures.CreaturesArray)
+            a.takeTurn(creatures, gameboard);
+        go = new GameOutput();
     }
     
     public void openMenu() {
