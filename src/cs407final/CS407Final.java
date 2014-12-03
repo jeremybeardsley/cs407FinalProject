@@ -30,6 +30,7 @@ public class CS407Final {
             hurChance = disasterChances[2],
             typhChance = disasterChances[3],
             earthChance = disasterChances[4];
+        ArrayList<String> customAnimals = singleton.getCustomAnimals();
         ArrayList<Position> usedSeedSpaces = new ArrayList();
         
         AnimalFactory af = AnimalFactory.getAnimalFactory();
@@ -85,11 +86,24 @@ public class CS407Final {
             setViablePosition(rn, gameWidth, gameHeight, usedSeedSpaces, animal);
             creatures.add(animal);
         }
+            
+            for (int i=0; i<customAnimals.size(); i++) {
+                String[] s = customAnimals.get(i).split("\\s");
+                Animal animal = af.createAnimal(s[0],
+                                                Integer.parseInt(s[1]),
+                                                Integer.parseInt(s[2]),
+                                                Integer.parseInt(s[3]),
+                                                Integer.parseInt(s[4]),
+                                                Integer.parseInt(s[5]),
+                                                Double.parseDouble(s[6]));
+                setViablePosition(rn, gameWidth, gameHeight, usedSeedSpaces, animal);
+                creatures.add(animal);
+            }
      
 
      
     }
-
+    
     private static void setViablePosition(Random rn, int gameWidth, int gameHeight, ArrayList<Position> usedSeedSpaces1, Animal an) {
         boolean viable = false;
         int posX = 0, posY = 0;
