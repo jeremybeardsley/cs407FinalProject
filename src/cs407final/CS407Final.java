@@ -31,26 +31,8 @@ public class CS407Final {
         //Build the game Board
         Board gameboard = new Board (gameHeight, gameWidth);
         //Creature Creatures
-        Creatures creatures = new Creatures(cntAnt, cntBear, cntBun, cntHb, cntTrex, cntYeti, gameboard);
-        
-            
-//            for (int i=0; i<customAnimals.size(); i++) {
-//                String[] s = customAnimals.get(i).split("\\s");
-//                Animal animal = af.createAnimal(s[0],
-//                                                Integer.parseInt(s[1]),
-//                                                Integer.parseInt(s[2]),
-//                                                Integer.parseInt(s[3]),
-//                                                Integer.parseInt(s[4]),
-//                                                Integer.parseInt(s[5]),
-//                                                Double.parseDouble(s[6]));
-//                setViablePosition(rn, gameWidth, gameHeight, usedSeedSpaces, animal);
-//                creatures.add(animal);
-//            }
-     
-
-     
+        Creatures creatures = new Creatures(cntAnt, cntBear, cntBun, cntHb, cntTrex, cntYeti, gameboard, customAnimals);
     }
-    
     
     
 }

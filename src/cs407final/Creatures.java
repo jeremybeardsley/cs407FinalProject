@@ -18,7 +18,7 @@ import java.util.Random;
  */
 public class Creatures {
     public ArrayList<Animal> CreaturesArray = new ArrayList();
-    public Creatures(int cntAnt,int cntBear,int cntBun,int cntHb,int cntTrex, int cntYeti, Board gb) throws InvalidArgumentException{
+    public Creatures(int cntAnt,int cntBear,int cntBun,int cntHb,int cntTrex, int cntYeti, Board gb, ArrayList<String> custom) throws InvalidArgumentException{
                 ArrayList<Position> usedSeedSpaces = new ArrayList();
         
         AnimalFactory af = AnimalFactory.getAnimalFactory();
@@ -60,6 +60,18 @@ public class Creatures {
             setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
             CreaturesArray.add(animal);
         }
+            for (int i=0; i<custom.size(); i++) {
+                String[] s = custom.get(i).split("\\s");
+                Animal animal = af.createAnimal(s[0],
+                                                Integer.parseInt(s[1]),
+                                                Integer.parseInt(s[2]),
+                                                Integer.parseInt(s[3]),
+                                                Integer.parseInt(s[4]),
+                                                Integer.parseInt(s[5]),
+                                                Double.parseDouble(s[6]));
+                setViablePosition(rn, gb.width, gb.height, usedSeedSpaces, animal);
+                CreaturesArray.add(animal);
+            }
     }
     private static void setViablePosition(Random rn, int gameWidth, int gameHeight, ArrayList<Position> usedSeedSpaces1, Animal an) {
         boolean viable = false;
