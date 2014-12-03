@@ -1,6 +1,8 @@
 
 package cs407final.creatures;
 
+import java.util.Random;
+
 /**
  * Class RandomMoveStrategy which represents an animal's random movement unrelated to 
  * any other animal in the creature creation game. FlightMoveStrategy implements the 
@@ -14,8 +16,12 @@ package cs407final.creatures;
 public class RandomMoveStrategy implements MovementStrategy{
 
     @Override
-    public void move(String movementType) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean move() {
+        Random rn = new Random();
+        int temp = rn.nextInt(1000)%2;
+        return temp != 1;
     }
+
+   
     
 }

@@ -12,26 +12,10 @@ package cs407final.creatures;
  * @since 11-4-2014
  */
 public class Bear extends Animal{
-    
-    @Override
-    public void move() {
-        
-        System.out.println("Bear moved!");
-    }
-
-    @Override
-    public void eat() {
-        System.out.println("Bear Ate!");
-    }
 
     @Override
     protected void burnCalories() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.Energy = this.Energy - 20;
     }
 
-    @Override
-    protected void checkAdjacents() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

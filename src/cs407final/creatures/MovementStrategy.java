@@ -9,7 +9,8 @@ package cs407final.creatures;
  * @since 11-4-2014
  */
 public interface MovementStrategy {
-    public void move(String movementType);
+    
+    public boolean move();
         
     }
 

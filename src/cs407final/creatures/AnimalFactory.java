@@ -124,7 +124,7 @@ public class AnimalFactory {
         yeti.body.add(new WeightDecorator(4, new Legs()));
         yeti.composite = yeti.body;
         yeti.Weight = yeti.composite.getWeightTotal();
-        yeti.Strength = 50;
+        yeti.Strength = 25;
         yeti.Name = "NPC Yeti";
         return yeti;
         
