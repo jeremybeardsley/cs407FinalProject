@@ -21,7 +21,7 @@ import java.util.Random;
  */
 public abstract class Animal {
 
-    
+
     protected MovementStrategy moveStrat;
     protected Body body;
     public AnimalComposite composite;
@@ -34,6 +34,13 @@ public abstract class Animal {
     protected ArrayList<Position> adjacents;
     protected boolean sharedTile = false;
 
+    /**
+     * taketurn is the Template that outlines what will happen whenever takeTurn
+     * is called on any Animal. 
+     * 
+     * @param creatures
+     * @param gb
+     */
     public void takeTurn(Creatures creatures, Board gb) {
         if (!Death){
             checkAdjacents(creatures, gb);
@@ -47,6 +54,10 @@ public abstract class Animal {
         }
     }
 
+    /**
+     * This handles the movement for any Animal
+     * @param gb
+     */
     protected void move(Board gb) {
         System.out.println(this.Name+" is moving.");
         if (this.moveStrat.move()) {
@@ -87,8 +98,14 @@ public abstract class Animal {
 
     }
 
+    /**
+     * This is overridden by the concrete implementation of Animal 
+     */
     protected abstract void burnCalories();
 
+    /**
+     * Checks to see if Animal has died from starvation
+     */
     protected void checkDeath() {
         if (Energy < 0) {
             System.out.println(Name + " has died");
@@ -96,6 +113,10 @@ public abstract class Animal {
         }
     }
 
+    /**
+     * Returns Stats for each Creature.  Used for debugging, but not currently
+     * used in this iteration of the project.
+     */
     public void getStats() {
         System.out.println("Name: \t\t" + Name);
         System.out.println("Energy: \t" + Energy);
@@ -107,10 +128,21 @@ public abstract class Animal {
         System.out.println("");
     }
 
+    /**
+     * Sets the position for Animal
+     * @param x
+     * @param y
+     */
     public void setPosition(int x, int y) {
         position = new Position(x, y);
     }
 
+    /**
+     * Checks Checks all adjacent tiles for other creatures.
+     * 
+     * @param creatures
+     * @param gb
+     */
     protected void checkAdjacents(Creatures creatures, Board gb) {
         System.out.println("Checking tiles for Adjacent Creatures for " + this.Name);
         ArrayList<Position> adjTiles = new ArrayList();
@@ -132,6 +164,11 @@ public abstract class Animal {
         }
     }
 
+    /**
+     * If Animal has the sharedTile flag turned on, two creatures enter, one 
+     * returns.
+     * @param creatures
+     */
     protected void fight(Creatures creatures) {
         if (sharedTile) {
             for (Animal a : creatures.CreaturesArray) {
@@ -149,6 +186,11 @@ public abstract class Animal {
         }
     }
 
+    /**
+     * Implementation of Eat. If Animal has no food on tile, calls burnCalories
+     * to take damage from starvation.
+     * @param gb
+     */
     protected void eat(Board gb) {
         Tile currentTile = gb.gameBoard[this.position.xCord][this.position.yCord];
         if (currentTile.getFood() && this.Energy <= 80) {

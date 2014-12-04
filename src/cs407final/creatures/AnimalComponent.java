@@ -9,9 +9,10 @@ package cs407final.creatures;
  * @since 11-12-2014
  */
 public abstract class AnimalComponent {
-  public abstract double getWeightTotal();
-  
-  public AnimalComposite composite(){
+
+    public abstract double getWeightTotal();
+
+    public AnimalComposite composite(){
     return null;
   }
 }

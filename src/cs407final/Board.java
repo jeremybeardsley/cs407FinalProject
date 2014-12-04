@@ -6,12 +6,24 @@ import cs407final.tiles.TileMaker;
 import java.util.Random;
 
 /**
- *
- * @author Bear
+ * Class Board which represents the game board. 
+ * 
+ * @author Jeremy Beardsley, Andrew McCoy, Matt LeClerc, Andrew Possardt
+ * @version 1.0
+ * @since 11-4-2014
  */
 public class Board {
+
+ 
     public Tile[][]gameBoard;
-    public int height, width;
+    public int height,width;
+
+    /**
+     *This method creates a new Board based on size params passed in.
+     * 
+     * @param gameHeight
+     * @param gameWidth
+     */
     public Board(int gameHeight, int gameWidth){
         height = gameHeight;
         width = gameWidth;

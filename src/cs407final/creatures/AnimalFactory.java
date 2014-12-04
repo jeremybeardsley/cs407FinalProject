@@ -13,6 +13,7 @@ package cs407final.creatures;
  */
 public class AnimalFactory {
 
+  
     protected static AnimalFactory animalFactory = null;
 
 
@@ -20,6 +21,12 @@ public class AnimalFactory {
         //does nothing
     }
 
+    /**
+     *Creates new animal based on the passed argument. 
+     * @param animalType
+     * @return Animal
+     * @throws InvalidArgumentException
+     */
     public Animal createAnimal(char animalType) throws InvalidArgumentException {
         if (animalType == 'a') {
             return makeAntelope();
@@ -129,7 +136,19 @@ public class AnimalFactory {
         return yeti;
         
     }
-      public Animal createAnimal(String name, int Arms, int Legs, int Head, int Strength, int MoveStrat, double SizeFactor )
+
+    /**
+     * Overloaded method for createAnimal, used for implementation of User Created animals. 
+     * @param name
+     * @param Arms
+     * @param Legs
+     * @param Head
+     * @param Strength
+     * @param MoveStrat
+     * @param SizeFactor
+     * @return
+     */
+    public Animal createAnimal(String name, int Arms, int Legs, int Head, int Strength, int MoveStrat, double SizeFactor )
       {
           UserCreatedAnimal uca = new UserCreatedAnimal();
           switch(MoveStrat){
@@ -161,6 +180,11 @@ public class AnimalFactory {
            uca.Strength = Strength;
           return uca;
       }
+
+    /**
+     *
+     * @return
+     */
     public synchronized static AnimalFactory getAnimalFactory() {
         if (animalFactory == null) {
             animalFactory = new AnimalFactory();

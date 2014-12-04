@@ -17,9 +17,7 @@ public class FlightMoveStrategy implements MovementStrategy {
     public boolean move() {
         return false;
     }
-
-    
-           
+         
     }
 
  

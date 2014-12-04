@@ -1,16 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cs407final.tiles;
 
 /**
- *
- * @author Bear
+ * Tilemaker should be considered the Driver class for Tile Creation.  When the
+ * gameboard was being created, it was easier to just call TileMaker with a param
+ * and let this class handle the logistics of which Tile to build, based on the 
+ * argument. 
+ * 
+ * @author Jeremy Beardsley, Matt LeClerc, Andrew McCoy, Andrew Possardt
+ * @version 1.0
+ * @since 11-24-14
  */
 public class TileMaker {
 
+    /**
+     *
+     * @param i
+     * @return
+     */
     public Tile TileMaker(int i) {
 
         switch (i) {

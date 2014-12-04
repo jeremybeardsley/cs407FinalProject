@@ -1,4 +1,13 @@
 package cs407final.tiles;
+
+/**
+ * TileBuilder Interface this outlines methods used to build Tiles and method
+ * to return Tile
+ * 
+ * @author Jeremy Beardsley, Matt LeClerc, Andrew McCoy, Andrew Possardt
+ * @version 1.0
+ * @since 11-24-14
+ */
 public interface TileBuilder
 {
 

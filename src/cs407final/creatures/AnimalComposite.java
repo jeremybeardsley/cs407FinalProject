@@ -31,7 +31,7 @@ public abstract class AnimalComposite extends AnimalComponent{
 
   /**
    * Note implemented as template pattern
-   * @return price total of this component plus all contained classes
+   * @return weight total of this component plus all contained classes
    */
   @Override
   public double getWeightTotal() {

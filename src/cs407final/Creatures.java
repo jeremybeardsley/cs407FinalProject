@@ -13,12 +13,33 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- *
- * @author Bear
+ * Creatures Class creates a CreaturesArray that contains all the creatures 
+ * used throughout the game. 
+ * 
+ * @author Jeremy Beardsley, Andrew McCoy, Matt LeClerc, Andrew Possardt
+ * @version 1.0
+ * @since 11-4-2014
  */
 public class Creatures {
+
+
     public ArrayList<Animal> CreaturesArray = new ArrayList();
     public ArrayList<Position> usedSeedSpaces = new ArrayList();
+
+    /**
+     * Creates all of the creatures and add then to the CreaturesArray to be accessed
+     * by other parts of the game.
+     * 
+     * @param cntAnt
+     * @param cntBear
+     * @param cntBun
+     * @param cntHb
+     * @param cntTrex
+     * @param cntYeti
+     * @param gb
+     * @param custom
+     * @throws InvalidArgumentException
+     */
     public Creatures(int cntAnt,int cntBear,int cntBun,int cntHb,int cntTrex, int cntYeti, Board gb, ArrayList<String> custom) throws InvalidArgumentException{
         
         AnimalFactory af = AnimalFactory.getAnimalFactory();

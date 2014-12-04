@@ -1,5 +1,13 @@
 package cs407final.tiles;
 import cs407final.environment.Position;
+
+/**
+ * Tile Class. Represents the properties of a Tile.
+ * 
+ * @author Jeremy Beardsley, Matt LeClerc, Andrew McCoy, Andrew Possardt
+ * @version 1.0
+ * @since 11-24-14
+ */
 public class Tile 
 {
 

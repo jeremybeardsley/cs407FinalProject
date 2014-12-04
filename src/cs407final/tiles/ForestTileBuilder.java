@@ -1,4 +1,13 @@
 package cs407final.tiles;
+
+/**
+ * Concrete ForestTileBuilder Constructs a ForestTile and the various properties 
+ * associated with Forest Tiles, and returns Tile with getTile
+ * 
+ * @author Jeremy Beardsley, Matt LeClerc, Andrew McCoy, Andrew Possardt
+ * @version 1.0
+ * @since 11-24-14
+ */
 public class ForestTileBuilder implements TileBuilder
 {
     private Tile tile;
