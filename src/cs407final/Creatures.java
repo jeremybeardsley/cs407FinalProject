@@ -75,15 +75,18 @@ public class Creatures {
             }
         }
     }
-    private static void setViablePosition(Random rn, int gameWidth, int gameHeight, ArrayList<Position> usedSeedSpaces1, Animal an) {
+    private static void setViablePosition(Random rn, int gameWidth, int gameHeight, ArrayList<Position> usedSeedSpaces, Animal an) {
         boolean viable = false;
         int posX = 0, posY = 0;
         while (!viable) {
-            posX = rn.nextInt(gameWidth - 1) + 1;
-            posY = rn.nextInt(gameHeight - 1) + 1;
-            if(usedSeedSpaces1.isEmpty()) viable = true;
+            posX = rn.nextInt(100000)%gameWidth;
+            posY = rn.nextInt(100000)%gameHeight;
+            if (posX >= gameWidth){posX = gameWidth-1;}
+            if (posY >= gameHeight){posY = gameHeight-1;}
+            
+            if(usedSeedSpaces.isEmpty()) viable = true;
             else {
-                for (Position p : usedSeedSpaces1) {
+                for (Position p : usedSeedSpaces) {
                     if (p.xCord == posX && p.yCord == posY)
                         viable = false;
                     else {
@@ -94,6 +97,6 @@ public class Creatures {
             }
         }
         an.setPosition(posX, posY);
-        usedSeedSpaces1.add(new Position(posX,posY));
+        usedSeedSpaces.add(new Position(posX,posY));
     }
 }

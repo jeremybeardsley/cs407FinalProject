@@ -21,6 +21,7 @@ import java.util.Random;
  */
 public abstract class Animal {
 
+    
     protected MovementStrategy moveStrat;
     protected Body body;
     public AnimalComposite composite;
@@ -34,14 +35,19 @@ public abstract class Animal {
     protected boolean sharedTile = false;
 
     public void takeTurn(Creatures creatures, Board gb) {
-        checkAdjacents(creatures);
-        move();
+        if (!Death){
+            checkAdjacents(creatures, gb);
+        move(gb);
         fight(creatures);
         eat(gb);
         checkDeath();
+        }
+        else {
+            System.out.println(this.Name +" cannot take a turn, its dead.");
+        }
     }
 
-    protected void move() {
+    protected void move(Board gb) {
         System.out.println(this.Name+" is moving.");
         if (this.moveStrat.move()) {
             if (this.adjacents != null) {
@@ -49,8 +55,7 @@ public abstract class Animal {
                 int seed = rn.nextInt(100000) % adjacents.size();
                 this.position = adjacents.get(seed);
                 sharedTile = true;
-
-            }
+        }
         } else {
             boolean unOccupied = true;
             Random rn = new Random();
@@ -59,7 +64,18 @@ public abstract class Animal {
                 unOccupied = true;
                 int x = rn.nextInt(1000000) % 3;
                 int y = rn.nextInt(1000000) % 3;
-                temp = new Position(this.position.xCord + (x - 1), this.position.yCord + (y - 1));
+                int tempX = this.position.xCord + (x - 1);
+                int tempY = this.position.yCord + (y - 1);
+                
+                //A little voodoo cuz animals were randomly falling off the world
+                //and breaking the entire program.  There is def a better way to 
+                //do this, but TBH, we are short on time. 
+                if (tempX<0){tempX=0;}
+                if (tempY<0){tempY=0;}
+                if (tempX>= gb.width){tempX = gb.width-1;}
+                if (tempY>= gb.height){tempY = gb.height-1;}
+                
+                temp = new Position(tempX,tempY);
                 if (adjacents != null) {
                     if (adjacents.contains(temp)) {
                         unOccupied = false;
@@ -95,12 +111,17 @@ public abstract class Animal {
         position = new Position(x, y);
     }
 
-    protected void checkAdjacents(Creatures creatures) {
+    protected void checkAdjacents(Creatures creatures, Board gb) {
         System.out.println("Checking tiles for Adjacent Creatures for " + this.Name);
         ArrayList<Position> adjTiles = new ArrayList();
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
+                int newX = this.position.xCord + i;
+                int newY = this.position.yCord + j;
+                //added to avoid tiles that were out of bounds of array
+                if (newX >= 0 && newY >=0 && newX < gb.width && newY < gb.height) {
                 adjTiles.add(new Position(this.position.xCord + i, this.position.yCord + j));
+                }
             }
         }
 
